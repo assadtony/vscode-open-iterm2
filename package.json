@@ -1,25 +1,26 @@
 {
-    "name": "vscode-open-iterm2",
-    "displayName": "Open iTerm2",
-    "description": "Open iTerm2 for vscode",
+    "name": "vscode-open-tower",
+    "displayName": "Open GitTower",
+    "description": "Open GitTower for vscode",
     "version": "0.0.4",
-    "publisher": "mushan",
+    "publisher": "assadtony",
     "author": {
-        "name": "mushan",
-        "email": "mushanmail@126.com"
+        "name": "assadtony",
+        "email": "assadtony@gmail.com"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/mushanshitiancai/vscode-open-iterm2.git"
+        "url": "https://github.com/assadtony/vscode-open-tower.git"
     },
-    "homepage": "https://github.com/mushanshitiancai/vscode-open-iterm2/blob/master/README.md",
+    "homepage": "https://github.com/assadtony/vscode-open-tower/blob/master/README.md",
     "bugs": {
-        "url": "https://github.com/mushanshitiancai/vscode-open-iterm2/issues"
+        "url": "https://github.com/assadtony/vscode-open-tower/issues"
     },
     "icon": "res/icon.png",
     "keywords": [
-        "iTerm2",
-        "iterm2",
+        "GitTower",
+        "tower",
+        "gittower",
         "terminal"
     ],
     "engines": {
@@ -29,35 +30,35 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.openITerm2"
+        "onCommand:extension.openTower"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.openITerm2",
-                "title": "Open iTerm2 Here"
+                "command": "extension.openTower",
+                "title": "Open GitTower Here"
             }
         ],
         "menus": {
             "explorer/context": [
                 {
-                    "command": "extension.openITerm2"
+                    "command": "extension.openTower"
                 }
             ],
             "editor/context": [
                 {
-                    "command": "extension.openITerm2"
+                    "command": "extension.openTower"
                 }
             ],
             "editor/title": [
                 {
-                    "command": "extension.openITerm2"
+                    "command": "extension.openTower"
                 }
             ],
             "editor/title/context": [
                 {
-                    "command": "extension.openITerm2"
+                    "command": "extension.openTower"
                 }
             ]
         }
@@ -66,7 +67,9 @@
         "vscode:prepublish": "tsc -p ./",
         "compile": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
+        "test": "node ./node_modules/vscode/bin/test",
+        "vscode:publish": "vsce publish -p $VSCTOKEN",
+        "vscode:package": "vsce package"
     },
     "devDependencies": {
         "typescript": "^2.0.3",
