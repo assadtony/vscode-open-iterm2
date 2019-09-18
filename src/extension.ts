@@ -1,14 +1,13 @@
 'use strict';
-import { spawn } from 'child_process';
+import { exec } from 'child_process';
 import * as path from 'path';
 import * as fs from 'fs';
 import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
 
-    let disposable = vscode.commands.registerCommand('extension.openITerm2', (e: vscode.Uri) => {
+    let disposable = vscode.commands.registerCommand('extension.openTower', (e: vscode.Uri) => {
         if (process.platform === "darwin") {
-            const scriptPath = path.join(__dirname, "../../res/open-item2.scpt");
 
             console.log(e);
             fs.stat(e.fsPath, (err, stats) => {
@@ -20,7 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
                 }
 
                 console.log(dirPath);
-                let childProcess = spawn("osascript", [scriptPath, "cd", `"${dirPath}"`]);
+                let childProcess = exec(`gittower ${dirPath}`);
 
             });
         } else {
